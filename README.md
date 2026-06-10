@@ -78,18 +78,47 @@ Execute o comando a seguir na raiz do projeto:
 pnpm install
 ```
 
-### 2. Rodar no Navegador (Web)
-Para rodar a aplicação Web limpando o cache do Metro Bundler:
-```bash
-pnpm web --clear
-```
-Isso abrirá o servidor local em `http://localhost:8081`. 
+### 2. Compilar e Gerar o APK (Android)
 
-### 3. Rodar no Celular (Expo Go / Emulador)
-Para iniciar no Android ou iOS limpando o cache:
-```bash
-npx expo start -c
-```
-Abra o aplicativo **Expo Go** em seu smartphone físico e escaneie o QR Code gerado no terminal.
+Para compilar o aplicativo em um arquivo APK executável no celular, existem dois métodos principais:
+
+#### Método A: Compilação Local (Gradle)
+Este método gera o APK diretamente na sua máquina local utilizando o Gradle. Certifique-se de ter o [Java Development Kit (JDK)](https://adoptium.net/) instalado.
+
+1. Gere os arquivos nativos do projeto Android:
+   ```bash
+   npx expo prebuild --platform android
+   ```
+2. Navegue para o diretório nativo e compile o APK (Debug ou Release):
+   - **Para gerar APK de testes (Debug):**
+     ```powershell
+     cd android
+     .\gradlew.bat assembleDebug
+     ```
+     *O APK será salvo em:* `android\app\build\outputs\apk\debug\app-debug.apk`
+   
+   - **Para gerar APK de produção (Release):**
+     ```powershell
+     cd android
+     .\gradlew.bat assembleRelease
+     ```
+     *O APK será salvo em:* `android\app\build\outputs\apk\release\app-release.apk`
+
+#### Método B: Compilação na Nuvem (Expo EAS Build)
+Se preferir compilar pela nuvem da Expo, você pode gerar um APK configurando o EAS:
+
+1. Instale o EAS CLI (se não possuir):
+   ```bash
+   npm install -g eas-cli
+   ```
+2. Inicialize a configuração do build:
+   ```bash
+   npx eas build:configure
+   ```
+3. Execute a compilação do APK para testes internos:
+   ```bash
+   npx eas build --platform android --profile preview
+   ```
+   *Isso gerará um arquivo APK pronto para download diretamente no painel do Expo.*
 
 # APLICATIVO-MONITURAMENTO-VEICULO
