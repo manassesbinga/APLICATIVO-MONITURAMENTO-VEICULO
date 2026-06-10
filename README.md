@@ -21,9 +21,9 @@ Este projeto é um cliente customizado interno da empresa que empacota a interfa
 Abaixo estão capturas de tela do aplicativo rodando no simulador do iPhone 14 Pro, ilustrando a identidade visual personalizada da empresa e o fluxo de telas:
 
 <p align="center">
-  <img src="./assets/iPhone-14-PRO-localhost.png" width="30%" alt="Tela de Login Customizada" />
-  <img src="./assets/iPhone-14-PRO-localhost (1).png" width="30%" alt="Menu Secreto de Ajustes" />
-  <img src="./assets/iPhone-14-PRO-localhost (2).png" width="30%" alt="Painel do Mapa de Rastreamento" />
+  <img src="./assets/iphone-login.png" width="30%" alt="Tela de Login Customizada" />
+  <img src="./assets/iphone-settings.png" width="30%" alt="Menu Secreto de Ajustes" />
+  <img src="./assets/iphone-map.png" width="30%" alt="Painel do Mapa de Rastreamento" />
 </p>
 
 ---
